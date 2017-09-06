@@ -73,18 +73,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
 # Database
-# sudo -iu postgres psql
+# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
     'default': {
-                
-                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': 'projeto',
-        'USER': 'admin',
-        'PASSWORD': 'nR9f9tw+sk5yLvROCQodPLqbyAdPKReal41FKvLB/qE=',
-        'HOST': 'localhost',
-        'PORT': '5432',
-          
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -108,5 +102,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
